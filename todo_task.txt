@@ -1,0 +1,40 @@
+[X] Go to Git Hub Repository
+[X] Template and copy Repository
+[X] clone and create in terminal
+[X] open in VS Code
+
+DataBase
+[X] Create DB `weekend-to-do-app` in Postico
+    [X] Create Table and Variables
+    [X] Create `database.sql` text file
+
+Create Files in 'Weekend-SQL-TO-DO-LIST'
+Folders
+    server
+        modules
+            [] pool.js
+        public
+            scripts
+                [] client.js
+            vendors
+                [] jquery.js
+            styles
+                [] bootstrap.min.css
+                [] bootstrap.min.css.map
+                [] styles.css
+        [] index.html
+        routes
+            []task.router.js
+    [] server.js
+    [] .gitignore (.DS_Store, node_modules, logs *.log npm-debug.log* ref.koala-holla)
+    [] database.sql - add table and list created in Postico
+    {} package-lock.json - run npm init --yes, npm install, express, body-parser, pg
+    {} package.json - run npm init --yes, npm install, express, body-parser, pg        
+
+Server                  Client
+                Routes                  
+    [] GET              [] GET
+    [] POST             [] POST
+    [] PUT              [] PUT
+    [] DELETE           [] DELETE
+
