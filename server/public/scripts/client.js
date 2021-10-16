@@ -6,12 +6,12 @@ $(document).ready(function () {
   //click listener for add button
   setupClickListeners();
   // load existing koalas on page load
-  getTasks();
+  getTask();
 }); // end doc ready
 
 function setupClickListeners() {
 
-  $('#viewTasks').on('click', '.transferBtn', readyForTransfer)
+  $('#viewTasks').on('click', '.completeBtn', complete)
   $('#viewTasks').on('click', '.deleteBtn', handleDelete)
 
   $('#addButton').on('click', function () {
@@ -46,7 +46,7 @@ function getTask() {
 function saveTask(newTask) {
   console.log('in saveTask', newTask);
   // ajax call to server to get todo
-  $.ajax({ method: `POST`, url: `/todo`, data: newTodo })
+  $.ajax({ method: `POST`, url: `/todo`, data: newTask })
     .then(function (response) {
       console.log(`The task was successfully added to the database.`);
       getTask(); // this will also call renderToDOM();
@@ -64,15 +64,15 @@ function renderToDOM(task) {
       $(`#viewTask`).append(`
     <tr data-id="${todo.id}">
       <th>${todo.task}</th>
-      <th><button class="transferBtn">Transferred</button></th>
+      <th><button class="completeBtn">Complete</button></th>
       <th><button class="deleteBtn">Delete</button></th>
     </tr>
     `)
-    } if (koala.complete === false){
+    } if (todo.complete === false){
       $(`#viewKoalas`).append(`
       <tr data-id="${todo.id}">
         <th>${todo.task}</th>
-        <th><button class="transferBtn">Ready for Transfer</button></th>
+        <th><button class="completeBtn">Complete</button></th>
         <th><button class="deleteBtn">Delete</button></th>
       </tr>
       `)
@@ -97,17 +97,17 @@ function handleDelete() {
 }
 
 
-function readyForTransfer() {
-  console.log('In ready for Transfer');
+function complete() {
+  console.log('In complete');
   let idToTransfer = $(this).closest('tr').data('id');
   let text = $(this).text();
-  let readyForTransfer;
+  let complete;
   if (text === 'Complete') {
-    readyForTransfer = true;
+    complete = true;
   } else if (text === 'Delete') {
-    readyForTransfer = false;
+    complete = false;
   }
-console.log(readyForTransfer);
+console.log(complete);
 console.log(text);
 
 
