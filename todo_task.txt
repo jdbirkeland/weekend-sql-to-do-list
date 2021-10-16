@@ -12,15 +12,15 @@ Create Files in 'Weekend-SQL-TO-DO-LIST'
 Folders
     server
         modules
-            [] pool.js
+            [X] pool.js
         public
             scripts
                 [] client.js
             vendors
-                [] jquery.js
+                [X] jquery.js
             styles
-                [] bootstrap.min.css
-                [] bootstrap.min.css.map
+                [X] bootstrap.min.css
+                [X] bootstrap.min.css.map
                 [] styles.css
         [] index.html
         routes
