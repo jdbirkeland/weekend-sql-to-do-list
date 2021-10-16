@@ -56,10 +56,10 @@ function saveTask(newTask) {
     });
 }
 
-function renderToDOM(todo) {
+function renderToDOM(listOfTasks) {
   $(`#viewTasks`).empty();
 
-  for (let todo of todo) {
+  for (let todo of listOfTasks) {
     if (todo.complete === true) {
       $(`#viewTasks`).append(`
     <tr data-id="${todo.id}">

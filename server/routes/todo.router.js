@@ -58,14 +58,14 @@ todoRouter.post('/', (req, res) => {
 // PUT
 todoRouter.put('/:id', (req, res) => {
     let id = req.params.id;
-    let readyForTransfer = req.body.complete;
+    let complete = req.body.complete;
 
     console.log(id);
     console.log(complete);
 
     let queryText = `
         UPDATE "todo"
-        SET "ready_to_transfer" = $2
+        SET "complete" = $2
         WHERE "id" = $1
          `
 
