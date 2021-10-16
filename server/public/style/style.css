@@ -1,3 +1,7 @@
 body {
     background: linear-gradient(270deg, rgba(63,94,251,1) 0%, rgba(70,252,233,1) 100%);
 }
+
+#viewTasks {
+    cursor: pointer;
+  }

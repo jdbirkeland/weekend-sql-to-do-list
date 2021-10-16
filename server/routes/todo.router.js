@@ -11,7 +11,7 @@ const pool = require('../modules/pool');
 todoRouter.get(`/`, (req, res) => {
     console.log(`Received a GET /todo request`);
     // build the SQL query
-    let queryText = `SELECT * FROM "todo"`;
+    let queryText = `SELECT * FROM "todo" ORDER BY "id"`;
 
     // send the query to the SQL database
     pool

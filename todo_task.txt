@@ -15,7 +15,7 @@ Folders
             [X] pool.js
         public
             scripts
-                [] client.js
+                [X] client.js
             vendors
                 [X] jquery.js
             styles
@@ -26,15 +26,23 @@ Folders
         routes
             [X]todo.router.js
     [X] server.js
-    [X] .gitignore (.DS_Store, node_modules, logs *.log npm-debug.log* ref.koala-holla)
+    [X] .gitignore (.DS_Store, node_modules, logs *.log npm-debug.log*)
     [X] database.sql - add table and list created in Postico
     {X} package-lock.json - run npm init --yes, npm install, express, body-parser, pg
     {X} package.json - run npm init --yes, npm install, express, body-parser, pg        
 
 Server                  Client
                 Routes                  
-    [] GET              [] GET
-    [] POST             [] POST
-    [] PUT              [] PUT
-    [] DELETE           [] DELETE
+    [X] GET              [X] GET
+    [X] POST             [X] POST
+    [X] PUT              [X] PUT
+    [X] DELETE           [X] DELETE
+
+[X] Create a front end experience that allows a user to create a Task.
+[X] When the Task is created, it should be stored inside of a database (SQL)
+[X] Whenever a Task is created the front end should refresh to show all tasks that need to be completed.
+[X] Each Task should have an option to 'Complete' or 'Delete'.
+[] When a Task is complete, its visual representation should change on the front end. For example, the background of the task container could change from gray to green. The complete option should be  'checked off'. Each of these are accomplished in CSS, but will need to hook into logic to know whether or not the task is complete.
+[] Whether or not a Task is complete should also be stored in the database.
+[X] Deleting a Task should remove it both from the front end as well as the Database.
 
