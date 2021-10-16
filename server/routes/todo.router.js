@@ -55,3 +55,50 @@ todoRouter.post('/', (req, res) => {
         });
 });
 
+// PUT
+todoRouter.put('/:id', (req, res) => {
+    let id = req.params.id;
+    let readyForTransfer = req.body.complete;
+
+    console.log(id);
+    console.log(complete);
+
+    let queryText = `
+        UPDATE "todo"
+        SET "ready_to_transfer" = $2
+        WHERE "id" = $1
+         `
+
+    let values = [id, complete];
+
+    pool.query(queryText, values).then(result => {
+        res.sendStatus(204);
+
+    }).catch(err => {
+        console.log('Error with GET query', err);
+        res.sendStatus(500);
+    })
+})
+
+// DELETE
+todoRouter.delete('/:id', (req, res) => {
+    let id = req.params.id
+    console.log(id);
+    // pool.query...
+    let queryText = `	
+    DELETE FROM "todo"
+  WHERE "id" = $1;
+    `
+    let values = [id];
+
+    pool.query(queryText, values).then(result => {
+        res.sendStatus(204);
+
+    }).catch(err => {
+        console.log('Error with GET query', err);
+        res.sendStatus(500);
+    })
+
+});
+
+module.exports = todoRouter;

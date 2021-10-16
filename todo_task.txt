@@ -21,15 +21,15 @@ Folders
             styles
                 [X] bootstrap.min.css
                 [X] bootstrap.min.css.map
-                [] styles.css
-        [] index.html
+                [X] styles.css
+        [X] index.html
         routes
-            []task.router.js
-    [] server.js
-    [] .gitignore (.DS_Store, node_modules, logs *.log npm-debug.log* ref.koala-holla)
-    [] database.sql - add table and list created in Postico
-    {} package-lock.json - run npm init --yes, npm install, express, body-parser, pg
-    {} package.json - run npm init --yes, npm install, express, body-parser, pg        
+            [X]todo.router.js
+    [X] server.js
+    [X] .gitignore (.DS_Store, node_modules, logs *.log npm-debug.log* ref.koala-holla)
+    [X] database.sql - add table and list created in Postico
+    {X} package-lock.json - run npm init --yes, npm install, express, body-parser, pg
+    {X} package.json - run npm init --yes, npm install, express, body-parser, pg        
 
 Server                  Client
                 Routes                  

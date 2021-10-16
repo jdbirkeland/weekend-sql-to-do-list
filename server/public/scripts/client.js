@@ -14,7 +14,7 @@ function setupClickListeners() {
   $('#viewTasks').on('click', '.completeBtn', complete)
   $('#viewTasks').on('click', '.deleteBtn', handleDelete)
 
-  $('#addButton').on('click', function () {
+  $('#addBtn').on('click', function () {
     console.log('in addButton on click');
     // get user input and put in an object
     // NOT WORKING YET :(
@@ -56,12 +56,12 @@ function saveTask(newTask) {
     });
 }
 
-function renderToDOM(task) {
+function renderToDOM(todo) {
   $(`#viewTasks`).empty();
 
-  for (let todo of todos) {
+  for (let todo of todo) {
     if (todo.complete === true) {
-      $(`#viewTask`).append(`
+      $(`#viewTasks`).append(`
     <tr data-id="${todo.id}">
       <th>${todo.task}</th>
       <th><button class="completeBtn">Complete</button></th>
@@ -69,7 +69,7 @@ function renderToDOM(task) {
     </tr>
     `)
     } if (todo.complete === false){
-      $(`#viewKoalas`).append(`
+      $(`#viewTasks`).append(`
       <tr data-id="${todo.id}">
         <th>${todo.task}</th>
         <th><button class="completeBtn">Complete</button></th>
