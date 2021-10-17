@@ -10,3 +10,10 @@ VALUES
 ('Watch Vikings Game', FALSE),
 ('Mow the Yard', FALSE),
 ('Give the dogs a bath', FALSE);
+
+SELECT * FROM "todo";
+
+DELETE FROM "todo"
+WHERE "id" = 7;
+
+DROP TABLE "todo";

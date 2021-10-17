@@ -1,7 +1,15 @@
 body {
     background: linear-gradient(270deg, rgba(63,94,251,1) 0%, rgba(70,252,233,1) 100%);
+    font-family: fantasy;
 }
 
-#viewTasks {
-    cursor: pointer;
-  }
+  h1, .inputTasks {
+    text-align: center;
+    color: indigo;
+}
+
+h2 {
+    font-weight: bold;
+    text-decoration: underline;
+    color: indigo;
+}

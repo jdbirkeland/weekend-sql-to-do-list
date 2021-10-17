@@ -3,9 +3,7 @@ console.log('js');
 $(document).ready(function () {
     console.log('JQ');
     // Establish Click Listeners
-    //click listener for add button
     setupClickListeners();
-    // load existing koalas on page load
     getTask();
 }); // end doc ready
 
@@ -17,12 +15,9 @@ function setupClickListeners() {
     $('#addBtn').on('click', function () {
         console.log('in addButton on click');
         // get user input and put in an object
-        // NOT WORKING YET :(
-        // using a test object
         let taskToSend = {
             task: $('#taskIn').val(),
         };
-
         // call saveTask with the new object
         saveTask(taskToSend);
     });
@@ -71,7 +66,7 @@ function renderToDOM(listOfTasks) {
     `)
         } if (todo.complete === true) {
             $(`#viewTasks`).append(`
-      <tr data-id="${todo.id}">
+      <tr style="background-color:#7F96FF;color:#ffffff;" data-id="${todo.id}">
         <th>${todo.task}</th>
         <th><p>You Did It!"</p></th>
         <th><button class="deleteBtn">Delete</button></th>
@@ -97,7 +92,6 @@ function handleDelete() {
         });
 }
 
-
 function complete() {
     console.log('In complete');
     let idToTransfer = $(this).closest('tr').data('id');
@@ -119,7 +113,7 @@ function complete() {
         },
     })
         .then(function (response) {
-            console.log('Response from id to Transfer', response);
+            console.log('Response from id to complete', response);
             getTask();
             changeColor();
         })
@@ -128,12 +122,4 @@ function complete() {
         });
 }
 
-// function changeRowColor() {
-//     console.log('In changeRowColor');
-//     let idToTransfer = $(this).closest('tr').data('id');
 
-
-function changeColor(event) {
-    const el = event.target;
-    el.setAttribute('style', 'color: blue');
-}
