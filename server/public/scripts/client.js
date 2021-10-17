@@ -50,6 +50,7 @@ function saveTask(newTask) {
         .then(function (response) {
             console.log(`The task was successfully added to the database.`);
             getTask(); // this will also call renderToDOM();
+            $(`#taskIn`).val(``);
         })
         .catch(function (error) {
             console.log(`There was an error adding new task to the server:`, error);
@@ -130,9 +131,9 @@ function complete() {
 // function changeRowColor() {
 //     console.log('In changeRowColor');
 //     let idToTransfer = $(this).closest('tr').data('id');
-   
 
-   function changeColor(event) {
+
+function changeColor(event) {
     const el = event.target;
     el.setAttribute('style', 'color: blue');
-  }
+}
